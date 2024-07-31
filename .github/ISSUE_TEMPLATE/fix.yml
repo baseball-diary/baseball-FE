@@ -23,5 +23,3 @@ body:
       label: 📄 참고할 만한 자료 (선택)
       description: 참고할 만한 자료를 적어주세요.
       placeholder: 참고할 만한 자료를 적어주세요.
-    validations:
-      required: true
