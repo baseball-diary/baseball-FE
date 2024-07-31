@@ -1,3 +1,12 @@
 {
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "jsx": "react-jsx"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "@react-native/typescript-config/tsconfig.json"],
   "extends": "@react-native/typescript-config/tsconfig.json"
 }
