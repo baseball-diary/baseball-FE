@@ -1,10 +1,13 @@
 import {SafeAreaView, Text} from 'react-native'
+import {RecoilRoot} from 'recoil'
 
 function App() {
   return (
-    <SafeAreaView>
-      <Text>baseball</Text>
-    </SafeAreaView>
+    <RecoilRoot>
+      <SafeAreaView>
+        <Text>baseball</Text>
+      </SafeAreaView>
+    </RecoilRoot>
   )
 }
 
