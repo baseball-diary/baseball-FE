@@ -15,9 +15,10 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'react', 'prettier'],
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': ['error', {semi: false}],
     'import/order': 'off',
     'no-unused-vars': 'off',
+    semi: ['error', 'never'],
   },
   extends: [
     '@react-native',
@@ -26,4 +27,4 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript',
   ],
-};
+}
