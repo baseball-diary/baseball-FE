@@ -1,0 +1,39 @@
+name: Build iOS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  common:
+    uses: ./.github/workflows/common.yml
+
+  build:
+    needs: common
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install CocoaPods
+        run: |
+          sudo gem install cocoapods
+          cd ios
+          pod install
+
+      - name: Build iOS App
+        run: |
+          cd ios
+          xcodebuild -workspace baseball.xcworkspace -scheme baseball -sdk iphonesimulator -configuration Debug build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+          # xcodebuild -workspace baseball.xcworkspace -scheme baseball -sdk iphoneos -configuration AppStoreDistribution archive -archivePath ${{ github.workspace }}/build/baseball.xcarchive
+          # xcodebuild -exportArchive -archivePath ${{ github.workspace }}/build/baseball.xcarchive -exportOptionsPlist ios/exportOptions.plist -exportPath ${{ github.workspace }}/build/baseball.ipa
+
+      - name: Upload iOS artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ios-build
+          path: ${{ github.workspace }}/build/baseball.ipa
