@@ -15,10 +15,13 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'react', 'prettier'],
   rules: {
-    'prettier/prettier': ['error', {semi: false}],
+    'prettier/prettier': ['error'],
     'import/order': 'off',
     'no-unused-vars': 'off',
     'import/namespace': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'import/no-unresolved': 'off',
+    semi: 0,
   },
   extends: [
     '@react-native',
