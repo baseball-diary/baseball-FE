@@ -19,6 +19,8 @@ module.exports = {
     'import/order': 'off',
     'no-unused-vars': 'off',
     'import/namespace': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'import/no-unresolved': 'off',
   },
   extends: [
     '@react-native',
