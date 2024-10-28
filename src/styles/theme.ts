@@ -15,6 +15,6 @@ export const theme = {
     bold: 700,
     extraBold: 800,
   },
-}
+} as const
 
 export type Theme = typeof theme

@@ -1,18 +1,9 @@
 import {theme} from '@/styles/theme'
-import {FC} from 'react'
-import {StyleSheet, Text, TextProps} from 'react-native'
-
-export const DefaultText: FC<TextProps> = ({style, ...rest}) => {
-  const defaultStyle = {
-    fontFamily: 'Pretendard',
-    color: theme.color.black,
-  }
-
-  return <Text style={[defaultStyle, style]} {...rest} />
-}
+import {StyleSheet} from 'react-native'
 
 export const GlobalStyle = StyleSheet.create({
   root: {
+    flex: 1,
     margin: 0,
     padding: 0,
     width: '100%',
