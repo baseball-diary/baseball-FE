@@ -21,7 +21,11 @@ module.exports = {
     'import/namespace': 'off',
     'react/react-in-jsx-scope': 'off',
     'import/no-unresolved': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
     semi: 0,
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    'import/no-named-as-default': 0,
   },
   extends: [
     '@react-native',
